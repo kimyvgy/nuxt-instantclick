@@ -1,0 +1,33 @@
+{
+    "name": "@kimyvgy/nuxt-instantclick",
+    "version": "1.0.0",
+    "description": "Prefetch page's data on link hover for Nuxt.js",
+    "main": "lib/instantclick.js",
+    "scripts": {
+        "build": "babel src --out-dir lib",
+        "prepublish": "yarn build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kimyvgy/nuxt-instantclick.git"
+    },
+    "keywords": [
+        "nuxt",
+        "prefetch",
+        "preload",
+        "instantclick",
+        "vue",
+        "ssr"
+    ],
+    "author": "Kim Nguyen <kimnh@webee.asia>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kimyvgy/nuxt-instantclick/issues"
+    },
+    "homepage": "https://github.com/kimyvgy/nuxt-instantclick#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.15.4",
+        "@babel/core": "^7.15.5",
+        "@babel/preset-env": "^7.15.6"
+    }
+}
