@@ -1,6 +1,6 @@
 {
     "name": "@kimyvgy/nuxt-instantclick",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "Prefetch page's data on link hover for Nuxt.js",
     "main": "lib/instantclick.js",
     "scripts": {
@@ -29,5 +29,8 @@
         "@babel/cli": "^7.15.4",
         "@babel/core": "^7.15.5",
         "@babel/preset-env": "^7.15.6"
+    },
+    "dependencies": {
+        "abortcontroller-polyfill": "^1.7.3"
     }
 }
