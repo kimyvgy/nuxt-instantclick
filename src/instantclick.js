@@ -246,9 +246,9 @@ function clickListener(event) {
 
     // Check if it's opening in a new tab
     if (event.button !== 0 // Chrome < 55 fires a click event when the middle mouse button is pressed
-      || event.metaKey
-      || event.ctrlKey) {
-        return
+        || event.metaKey
+        || event.ctrlKey) {
+            return
     }
 
     event.preventDefault()
@@ -276,10 +276,7 @@ function mouseoverListener(event) {
         return
     }
 
-    if (
-        !isPreloadable(linkElement)
-        || hasValidCache(linkElement.href)
-    ) {
+    if (!isPreloadable(linkElement) || hasValidCache(linkElement.href)) {
         return
     }
 
