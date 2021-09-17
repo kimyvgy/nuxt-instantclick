@@ -1,6 +1,6 @@
 {
     "name": "@kimyvgy/nuxt-instantclick",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Prefetch page's data on link hover for Nuxt.js",
     "main": "lib/instantclick.js",
     "scripts": {
