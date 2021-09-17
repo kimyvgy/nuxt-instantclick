@@ -181,7 +181,7 @@ function display(url) {
             return
         }
 
-        if (!$fetchedPages[url]) {
+        if (!hasValidCache(url)) {
             // Dont re-preload when the user clicks on a link that is preloaded
             preload(url)
             triggerPageEvent('wait')
@@ -199,12 +199,14 @@ function display(url) {
         triggerPageEvent('exit', url, 'clicked on a link while waiting for another page to display')
         return
     }
-    if (!$fetchedPages[url]) {
+    if (!hasValidCache(url)) {
         triggerPageEvent('wait')
         $isWaitingForCompletion = true
         return
     }
-    triggerPageEvent('change', url, $fetchedPages[url])
+    if (hasValidCache(url)) {
+        triggerPageEvent('change', url, $fetchedPages[url])
+    }
 }
 
 function hasValidCache(url) {
