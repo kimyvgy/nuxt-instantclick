@@ -82,6 +82,10 @@ export default ({ store, app: { router } }) => {
         router.push(removeHostname(url))
     })
 }
+
+function removeHostname (url) {
+    return url.replace(/^https?:\/\/[^\/]+/, '');
+}
 ```
 
 3. Add logic to prevent fetch new data in `asyncData/fetch` method if preloaded data is not expired. Example:
