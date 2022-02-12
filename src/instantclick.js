@@ -22,6 +22,7 @@ let $delayBeforePreload = 50
 let $cacheTTL = 5 * 60 * 1000 // ms
 let $isPreloadable = null
 let $transformURL = null
+let $options = {}
 
 const $eventsCallbacks = {
     preload: [],
@@ -102,6 +103,7 @@ function init(options = {}) {
     $cacheTTL = options.cacheTTL !== undefined ? options.cacheTTL : $cacheTTL
     $transformURL = typeof options.transformURL === 'function' ? options.transformURL : $transformURL
     $isPreloadable = typeof options.isPreloadable === 'function' ? options.isPreloadable : $isPreloadable
+    $options = options.options || {}
 
     document.addEventListener('touchstart', touchstartListener, true)
     document.addEventListener('mouseover', mouseoverListener, true)
@@ -136,7 +138,7 @@ function preload(url) {
         ? $transformURL(url)
         : url
 
-    $controller = abortableFetch(request)
+    $controller = abortableFetch(request, $options)
     $controller.ready
         .then(r => r.json())
         .then((body) => {
