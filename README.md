@@ -1,4 +1,5 @@
 # @kimyvgy/nuxt-instantclick
+[![NPM version](https://img.shields.io/npm/v/@kimyvgy/nuxt-page-cache.svg)](https://www.npmjs.com/package/@kimyvgy/nuxt-page-cache)
 
 Prefetch page's data on link hover for Nuxt.js. (Instantclick port for Nuxt).
 
