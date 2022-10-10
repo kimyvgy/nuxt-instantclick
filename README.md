@@ -42,6 +42,9 @@ import InstantClick from '@kimyvgy/nuxt-instantclick'
 
 export default ({ store, app: { router } }) => {
     const options = {
+        //fetch options 
+        options: {},
+        
         // delay time before preloading page data
         delayBeforePreload: 0, // 0 ms
 
@@ -82,6 +85,10 @@ export default ({ store, app: { router } }) => {
     InstantClick.on('exit', (url) => {
         router.push(removeHostname(url))
     })
+}
+
+function removeHostname (url) {
+    return url.replace(/^https?:\/\/[^\/]+/, '');
 }
 ```
 
